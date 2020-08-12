@@ -13,7 +13,7 @@ The details of the movies(title, genre, runtime, rating, poster, etc) are fetche
 ## Cosine Similarity
   - Cosine similarity is a measure of similarity between two nonzero vectors of an inner product space that measures the cosine of the angle between them. Cosine of 00 is 1 and it is less than 1 for any other angle:
   
-  <img src="https://github.com/ijoseff/To-Do-List-App/blob/master/ReadMe%20Photos/home.png?raw=true" alt="App Demo">
+  <img src="https://www.oreilly.com/library/view/statistics-for-machine/9781788295758/assets/479c7ace-a21d-40b3-812b-1dc9f30e3868.jpg">
 
  - Here, Ai and Bi are components of vector A and B respectively:
  
