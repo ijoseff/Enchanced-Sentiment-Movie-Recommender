@@ -1,4 +1,4 @@
-# Enchanced Sentiment Recommender System
+# Enchanced Sentiment Movie Recommendation System
 
 Link: https://movie-sentiment-recommender.herokuapp.com/
 
