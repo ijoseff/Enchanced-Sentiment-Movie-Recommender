@@ -15,3 +15,5 @@ lxml==4.5.1
 urllib3==1.25.9
 requests==2.23.0
 pickleshare==0.7.5
+setuptools
+lxml
