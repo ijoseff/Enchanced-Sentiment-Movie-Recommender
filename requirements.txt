@@ -8,7 +8,7 @@ scipy
 nltk
 scikit-learn
 pandas
-beautifulsoup
+beautifulsoup4
 jsonschema
 tmdbv3api
 lxml
