@@ -1,36 +1,42 @@
 new autoComplete({
-    data: {                              // Data src [Array, Function, Async] | (REQUIRED)
-      src: films,
+    data: {                              
+        src: films,                       // Data source [Array, Function, Async]
     },
-    selector: "#autoComplete",           // Input field selector              | (Optional)
-    threshold: 2,                        // Min. Chars length to start Engine | (Optional)
-    debounce: 100,                       // Post duration for engine to start | (Optional)
-    searchEngine: "strict",              // Search Engine type/mode           | (Optional)
-    resultsList: {                       // Rendered results list object      | (Optional)
+    selector: "#autoComplete",            // Input field selector
+    threshold: 2,                         // Min. characters to start search
+    debounce: 100,                        // Delay before searching
+    searchEngine: "strict",               // Search mode
+    resultsList: {                        
         render: true,
         container: source => {
-            source.setAttribute("id", "food_list");
+            source.setAttribute("id", "autoComplete_list"); // Correct ID for results list
         },
         destination: document.querySelector("#autoComplete"),
         position: "afterend",
         element: "ul"
     },
-    maxResults: 5,                         // Max. number of rendered results | (Optional)
-    highlight: true,                       // Highlight matching results      | (Optional)
-    resultItem: {                          // Rendered result item            | (Optional)
+    maxResults: 5,                         // Limit displayed results
+    highlight: true,                       // Highlight matches
+    resultItem: {                         
         content: (data, source) => {
-            source.innerHTML = data.match;
+            source.innerHTML = data.match; // Display matched text
         },
         element: "li"
     },
-    noResults: () => {                     // Action script on noResults      | (Optional)
+    noResults: () => {                    
         const result = document.createElement("li");
         result.setAttribute("class", "no_result");
         result.setAttribute("tabindex", "1");
-        result.innerHTML = "No Results";
-        document.querySelector("#autoComplete_list").appendChild(result);
+        result.textContent = "No Results"; // Use textContent for better performance and security
+        const resultList = document.querySelector("#autoComplete_list");
+        if (resultList) {
+            resultList.appendChild(result);
+        }
     },
-    onSelection: feedback => {             // Action script onSelection event | (Optional)
-        document.getElementById('autoComplete').value = feedback.selection.value;
+    onSelection: feedback => {           
+        const input = document.getElementById("autoComplete");
+        if (input) {
+            input.value = feedback.selection.value; // Populate selected value in input
+        }
     }
 });
